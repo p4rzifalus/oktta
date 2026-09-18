@@ -11,8 +11,11 @@
      Формат указан как обычный woff2: запись «woff2-variations» понимают
      не все браузеры, и они молча подменяли шрифт системным. */
   src: url('./fonts/pragmatica-next-vf.woff2') format('woff2');
-  /* вариативный шрифт: Regular = 400, Medium = 490 */
-  font-weight: 100 900;
+  /* У шрифта две подвижные оси: насыщенность и ширина. Объявлены обе —
+     если не назвать ширину, Safari берёт её крайнее значение
+     и буквы выходят сжатыми в ниточку. */
+  font-weight: 100 900;   /* Regular = 400, Medium = 490 */
+  font-stretch: 50% 200%; /* обычная ширина = 100% */
   font-style: normal;
   font-display: swap;
 }
@@ -50,6 +53,8 @@ body {
   color: var(--ink);
   font-family: 'Pragmatica Next Web', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
+  /* держим обычную ширину букв: без этого Safari сжимает их в ниточку */
+  font-stretch: 100%;
   font-size: 15px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
