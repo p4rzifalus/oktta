@@ -95,7 +95,7 @@ function Showreel() {
           playsInline
           preload="auto"
         />
-        {!expanded && <img className="showreel__play" src="/icons/play.svg" alt="" />}
+        {!expanded && <img className="showreel__play" src={asset('/icons/play.svg')} alt="" />}
       </button>
     </div>
   )
@@ -142,7 +142,7 @@ function ProjectCard({ item }: { item: Project }) {
         {item.side === 'left' ? side : big}
       </div>
       <span className="project__arrow">
-        <img src="/icons/arrow-right-dark.svg" alt="" />
+        <img src={asset('/icons/arrow-right-dark.svg')} alt="" />
       </span>
     </a>
   )
@@ -226,17 +226,17 @@ export default function App() {
 
       <header className="header">
         <a className="header__logo" href="#top">
-          <img src="/icons/logo-oktta.svg" alt="OKTTA" />
+          <img src={asset('/icons/logo-oktta.svg')} alt="OKTTA" />
         </a>
 
         <button className="header__menu pill pill--dark" type="button">
-          <img className="pill__icon" src="/icons/menu.svg" alt="" />
+          <img className="pill__icon" src={asset('/icons/menu.svg')} alt="" />
           Меню
         </button>
 
         <div className="header__actions">
           <a className="pill pill--dark" href="#pdf">
-            <img className="pill__icon" src="/icons/eye.svg" alt="" />
+            <img className="pill__icon" src={asset('/icons/eye.svg')} alt="" />
             pdf
           </a>
           <a className="pill pill--accent" href="#start">
@@ -274,7 +274,7 @@ export default function App() {
           <a className="banner reveal" href="#ai-search">
             {BANNER}
             <span className="banner__arrow">
-              <img src="/icons/arrow-right-dark.svg" alt="" />
+              <img src={asset('/icons/arrow-right-dark.svg')} alt="" />
             </span>
           </a>
 
