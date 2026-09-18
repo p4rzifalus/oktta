@@ -45,6 +45,16 @@
 
 * { box-sizing: border-box; }
 
+/* У шрифта две подвижные оси. Safari не всегда понимает font-weight и
+   font-stretch для таких шрифтов и уводит буквы в узкое тонкое начертание,
+   поэтому обе оси задаём напрямую. Насыщенность берётся из переменной
+   --wght, которая наследуется вместе с font-weight. */
+*,
+*::before,
+*::after {
+  font-variation-settings: 'wght' var(--wght, 400), 'wdth' 100;
+}
+
 html, body, #root { height: 100%; }
 
 body {
@@ -55,6 +65,7 @@ body {
   font-weight: 400;
   /* держим обычную ширину букв: без этого Safari сжимает их в ниточку */
   font-stretch: 100%;
+  --wght: 400;
   font-size: 15px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
@@ -136,6 +147,7 @@ img { display: block; }
   border-radius: var(--radius-pill);
   font-size: 15px;
   font-weight: 490;
+  --wght: 490;
   line-height: 1.2;
   text-decoration: none;
   white-space: nowrap;
@@ -287,6 +299,7 @@ img { display: block; }
   margin: 0;
   font-size: 50px;
   font-weight: 490;
+  --wght: 490;
   line-height: 1.1;
 }
 
@@ -364,6 +377,7 @@ img { display: block; }
   color: var(--ink);
   font-size: 15px;
   font-weight: 490;
+  --wght: 490;
   line-height: 1.2;
   text-decoration: none;
   overflow: hidden;
@@ -480,6 +494,7 @@ img { display: block; }
   margin: 0;
   font-size: 25px;
   font-weight: 490;
+  --wght: 490;
   line-height: 1.2;
   white-space: pre-line;
 }
@@ -591,6 +606,7 @@ img { display: block; }
   margin: 0;
   font-size: 25px;
   font-weight: 490;
+  --wght: 490;
   line-height: 1.2;
 }
 
@@ -637,6 +653,7 @@ img { display: block; }
   font-family: inherit;
   font-size: 15px;
   font-weight: 490;
+  --wght: 490;
   line-height: 1.2;
   cursor: pointer;
 }
