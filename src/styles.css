@@ -4,8 +4,13 @@
    ============================================================================ */
 
 @font-face {
-  font-family: 'Pragmatica Next';
-  src: url('./fonts/pragmatica-next-vf.woff2') format('woff2-variations');
+  /* Имя нарочно своё: так браузер не подставит похожий шрифт,
+     установленный на компьютере, и всегда возьмёт файл из сайта */
+  font-family: 'Pragmatica Next Web';
+  /* Шрифт лежит внутри сайта, ставить его на компьютер не нужно.
+     Формат указан как обычный woff2: запись «woff2-variations» понимают
+     не все браузеры, и они молча подменяли шрифт системным. */
+  src: url('./fonts/pragmatica-next-vf.woff2') format('woff2');
   /* вариативный шрифт: Regular = 400, Medium = 490 */
   font-weight: 100 900;
   font-style: normal;
@@ -43,7 +48,7 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--ink);
-  font-family: 'Pragmatica Next', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Pragmatica Next Web', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.4;
